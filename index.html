@@ -30,8 +30,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,11 +39,11 @@
     z-index: 1;
   }
 
-  /* Video reaches full vertical height at all times while maintaining aspect ratio */
+  /* Fixed to viewport height; width scales strictly with height */
   .video-wrapper {
     height: 100vh;
-    width: calc(100vh * (32 / 9)); /* Dynamically calculates width to match height at 32:9 ratio */
-    min-width: 100vw;               /* Prevents horizontal black bars if screen is wider than 32:9 */
+    width: calc(100vh * (32 / 9));
+    flex-shrink: 0;
     pointer-events: none;
   }
 
