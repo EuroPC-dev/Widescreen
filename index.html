@@ -64,23 +64,25 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 50px;
+    padding-top: 15vh; /* Moved lower down the screen */
     pointer-events: none;
   }
 
-  /* Klok in het wit met contrast-schaduw */
+  /* Klok in het wit met sterkere contrast-schaduw */
   .clock {
     font-family: 'Garet', sans-serif;
-    font-size: 130px; 
+    font-size: 180px; /* Increased font size */
     font-weight: 850;
     color: #ffffff; 
     letter-spacing: -2px; 
     line-height: 0.82;
     font-variant-numeric: tabular-nums; 
     
+    /* Enhanced multi-layer shadow */
     text-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.85),
-      0 2px 6px rgba(0, 0, 0, 0.6);
+      0 4px 12px rgba(0, 0, 0, 0.9),
+      0 8px 30px rgba(0, 0, 0, 0.8),
+      0 16px 50px rgba(0, 0, 0, 0.6);
   }
 
   .clock .colon {
@@ -123,4 +125,4 @@
 </script>
 
 </body>
-</html> 
+</html>
