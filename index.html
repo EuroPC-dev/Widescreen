@@ -30,8 +30,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,11 +39,11 @@
     z-index: 1;
   }
 
-  /* Video past zich exact verticaal aan op 32:9 */
+  /* Video reaches full vertical height at all times while maintaining aspect ratio */
   .video-wrapper {
     height: 100vh;
-    aspect-ratio: 32 / 9;
-    min-width: 100vw;
+    width: calc(100vh * (32 / 9)); /* Dynamically calculates width to match height at 32:9 ratio */
+    min-width: 100vw;               /* Prevents horizontal black bars if screen is wider than 32:9 */
     pointer-events: none;
   }
 
@@ -64,21 +64,20 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 15vh; /* Moved lower down the screen */
+    padding-top: 15vh;
     pointer-events: none;
   }
 
   /* Klok in het wit met sterkere contrast-schaduw */
   .clock {
     font-family: 'Garet', sans-serif;
-    font-size: 180px; /* Increased font size */
+    font-size: 180px;
     font-weight: 850;
     color: #ffffff; 
     letter-spacing: -2px; 
     line-height: 0.82;
     font-variant-numeric: tabular-nums; 
     
-    /* Enhanced multi-layer shadow */
     text-shadow: 
       0 4px 12px rgba(0, 0, 0, 0.9),
       0 8px 30px rgba(0, 0, 0, 0.8),
